@@ -1,0 +1,25 @@
+﻿@page
+@{
+}
+<form action="SuaHanhKhach" method="post">
+    <input type="hidden" name="mach" value="@ViewBag.mach" />
+    <label>Mã hành khách</label>
+    <input type="text" name="mahk" value="@ViewBag.ctcb.Mahk" />
+    <br />
+    <label>Tên hành khách</label>
+    <input type="text" name="hoten" value="@ViewBag.ctcb.HanhKhach.Hoten" />
+    <label>Số ghế</label>
+    <input type="text" name="soghe" value="@ViewBag.ctcb.Soghe" />
+    <br />
+    <label>Loại ghế</label>
+    <select name="loaighe" id="loaighe">
+        <option value="true">Vip</option>
+        <option value="false">Thường</option>
+    </select>
+    <br />
+    <input type="submit" name="submit" value="Cập nhật" />
+</form>
+<script>
+    var loaighe = document.getElementById("loaighe");
+    loaighe.value = "@(ViewBag.ctcb.Loaighe ? "true":"false")";
+</script>

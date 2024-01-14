@@ -1,0 +1,46 @@
+﻿@page
+@{
+}
+<h1>Thêm khách vào chuyến bay</h1>
+<br />
+Chuyến
+<input value="@ViewBag.chuyenbay.Chuyen" type="text" disabled />
+<br />
+Ngày bay
+<input value="@ViewBag.chuyenbay.Ngay" type="text" disabled />
+<br />
+Giờ bay
+<input value="@ViewBag.chuyenbay.Gbay" type="text" disabled />
+<br />
+Giờ đến
+<input value="@ViewBag.chuyenbay.Gden" type="text" disabled />
+<br />
+Điểm đi
+<input value="@ViewBag.chuyenbay.Ddi" type="text" disabled />
+<br />
+Điểm đến
+<input value="@ViewBag.chuyenbay.Dden" type="text" disabled />
+<br />
+Chỗ vip
+<input value="@ViewBag.sochovip/@ViewBag.chuyenbay.Vip" type="text" disabled />
+<br />
+Chỗ thường
+<input value="@ViewBag.sochothuong/@ViewBag.chuyenbay.Thuong" type="text" disabled /> <br /> <br />
+<form action="ThemHanhKhach" method="post">
+    <input type="hidden" name="mach" value="@ViewBag.mach" />
+    <label>Mã hành khách</label>
+    <input type="text" name="mahk" />
+    <br />
+    <label>Tên hành khách</label>
+    <input type="text" name="hoten" />
+    <label>Số ghế</label>
+    <input type="text" name="soghe" />
+    <br />
+    <label>Loại ghế</label>
+    <select name="loaighe">
+        <option value="true">Vip</option>
+        <option value="false">Thường</option>
+    </select>
+    <br />
+    <input type="submit" name="submit" value="Thêm" />
+</form>

@@ -1,0 +1,50 @@
+﻿@page
+@{
+}
+<h1>Thông tin chuyến bay</h1> <br/>
+Chuyến
+<input value="@ViewBag.chuyenbay.Chuyen" type="text" disabled /> <br />
+Ngày bay
+<input value="@ViewBag.chuyenbay.Ngay" type="text" disabled />
+<br />
+Giờ bay
+<input value="@ViewBag.chuyenbay.Gbay" type="text" disabled />
+<br />
+Giờ đến
+<input value="@ViewBag.chuyenbay.Gden" type="text" disabled />
+<br />
+Điểm đi
+<input value="@ViewBag.chuyenbay.Ddi" type="text" disabled />
+<br />
+Điểm đến
+<input value="@ViewBag.chuyenbay.Dden" type="text" disabled /> <br />
+Chỗ vip
+<input value="@ViewBag.sochovip/@ViewBag.chuyenbay.Vip" type="text" disabled />
+<br />
+Chỗ thường
+<input value="@ViewBag.sochothuong/@ViewBag.chuyenbay.Thuong" type="text" disabled />
+<br />
+<button id="them"><a href="../Cau3/ViewThemhanhkhach?mach=@ViewBag.machuyenbay">Thêm hành khách</a></></button>
+<br />
+<table>
+    <tr>
+        <th>Tên hành khách</th>
+        <th>Điện thoại</th>
+        <th>Loại ghế</th>
+        <th>Số ghế</th>
+        <th>Chức năng</th>
+    </tr>
+    @foreach (var item in ViewBag.ctcb)
+    {
+        <tr>
+            <td>@item.HanhKhach.Hoten</td>
+            <td>@item.HanhKhach.Dienthoai</td>
+            <td>@(item.Loaighe?"Vip":"Thường")</td>
+            <td>@item.Soghe</td>
+            <td>
+                <a href="../Cau3/XoaHanhKhach?mach=@item.Mach&mahk=@item.Mahk">Xóa</a>
+                <a href="../Cau3/ViewSua?mach=@item.Mach&mahk=@item.Mahk">Sửa</a>
+            </td>
+        </tr>
+    }
+</table>
